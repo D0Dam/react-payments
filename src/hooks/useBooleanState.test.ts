@@ -23,6 +23,22 @@ describe('useBooleanState 훅 검사', () => {
     expect(result.current.value).toBe(false);
   });
 
+  test('setValue를 통해 value를 바꾸어 줄 수 있다.', () => {
+    const { result } = renderHook(() => useBooleanState(false));
+
+    act(() => {
+      result.current.setValue(true);
+    });
+
+    expect(result.current.value).toBe(true);
+
+    act(() => {
+      result.current.setValue(false);
+    });
+
+    expect(result.current.value).toBe(false);
+  });
+
   test('toggle을 실행하면 value의 true, false가 반대로 된다.', () => {
     const { result } = renderHook(() => useBooleanState(false));
 

@@ -7,5 +7,5 @@ export default function useBooleanState(initialValue: boolean) {
   const setFalse = () => setValue(false);
   const toggle = () => setValue(prev => !prev);
 
-  return { value, setTrue, setFalse, toggle };
+  return { value, setValue, setTrue, setFalse, toggle };
 }
